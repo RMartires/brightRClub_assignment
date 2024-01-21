@@ -5,7 +5,6 @@ import {
   CaretDownOutlined,
 } from "@ant-design/icons";
 import brightclublogo from "../../../public/brightrclub-logo.png";
-import Title from "antd/es/typography/Title";
 
 function HeaderRight() {
   return (
