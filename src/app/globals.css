@@ -1,0 +1,54 @@
+.badge-highlighted{
+    background-color: #dcdeff !important;
+    color: #6a4cff !important;
+    padding: 5px !important;
+    border-radius: 6px !important;
+}
+
+
+.badge-normal{
+    background-color: #dcdeff !important;
+    color: #6a4cff !important;
+    padding: 5px !important;
+    border-radius: 6px !important;
+}
+
+.highlighted-card-image{
+    transform: rotate(-5deg);
+}
+
+.highlighted-card-box {
+    position: relative;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 40%;
+}
+
+.highlighted-card-box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%; /* Set the initial height for the background color box */
+    z-index: -1; /* Send the pseudo-element to the back */
+    transition: height 0.3s ease; /* Add transition for smooth height change */
+    background-color: #eef1ff;
+    border-radius: 40px;
+}
+
+.highlighted-card-box:hover .highlighted-card-image{
+    transform: rotate(0deg);
+    transition: 0.3s ease;
+}
+
+.highlighted-card-box:hover::before {
+    height: 100%; /* Set the desired height for the background color box on hover */
+}
+
+
+.highlighted-card-add-to-wishlist-btn{
+    display: none !important;
+}
+
+.highlighted-card-box:hover .highlighted-card-add-to-wishlist-btn{
+    display: unset !important;
+    transition: 0.3s ease;
+}
