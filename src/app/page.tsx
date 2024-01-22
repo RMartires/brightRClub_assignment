@@ -2,6 +2,7 @@ import { Flex } from "antd";
 import Header from "./components/header";
 import HighlightedCard from "./components/highlightedCard";
 import BookCard from "./components/bookCard";
+import NumberedBookCard from "./components/numberedBookCard";
 
 export default function Home() {
   const highlightedCards = [
@@ -44,6 +45,11 @@ export default function Home() {
         <Flex vertical={false} justify="space-around" style={{ width: "100%" }}>
           {listOfBooks.map((book) => {
             return <BookCard data={book} />;
+          })}
+        </Flex>
+        <Flex vertical={false} justify="space-around" style={{ width: "100%" }}>
+          {listOfBooks.map((book) => {
+            return <NumberedBookCard data={book} />;
           })}
         </Flex>
       </div>

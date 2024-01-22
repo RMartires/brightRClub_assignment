@@ -5,12 +5,12 @@ import {
   HighlightedCardData,
 } from "./highlightedCard";
 
-export default function BookCard(props: {
-  data: Pick<
-    HighlightedCardData,
-    "imageSrc" | "title" | "rating" | "peopleCount"
-  >;
-}) {
+export type BookCardProps = Pick<
+  HighlightedCardData,
+  "imageSrc" | "title" | "rating" | "peopleCount"
+>;
+
+export default function BookCard(props: { data: BookCardProps }) {
   const { data } = props;
   return (
     <Flex vertical className="book-card" align="center">

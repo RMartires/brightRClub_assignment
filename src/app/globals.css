@@ -96,5 +96,26 @@
     transform: 0.5s ease;
 }
 
+/* numbered book card */
 
+.numbered-book-card::before {
+    color: #6a4cff;
+    content: "3";
+    position: relative;
+    bottom: -90px;
+    right: -25px;
+    font-size: 6em;
+    z-index: 1;
+    font-weight: 700;
+    transition: transform 0.5s;
+}
 
+.numbered-book-card:hover::before {
+    transform: scale(0.01);
+    z-index: -1;
+}
+
+.numbered-book-card:hover .book-card{
+    transform: scale(1.1) translateX(-20px);
+    transition: transform 0.5s;
+}
