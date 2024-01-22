@@ -1,6 +1,7 @@
 import { Flex } from "antd";
 import Header from "./components/header";
 import HighlightedCard from "./components/highlightedCard";
+import BookCard from "./components/bookCard";
 
 export default function Home() {
   const highlightedCards = [
@@ -17,6 +18,16 @@ export default function Home() {
     },
   ];
 
+  const listOfBooks = [
+    {
+      imageSrc:
+        "https://m.media-amazon.com/images/I/81P9B8sY4AL._AC_UF1000,1000_QL80_.jpg",
+      title: "How to Catch a Turkey - Adam Wallace",
+      rating: 4.3,
+      peopleCount: 123,
+    },
+  ];
+
   return (
     <Flex gap="middle" wrap="wrap">
       <Header></Header>
@@ -28,6 +39,11 @@ export default function Home() {
         >
           {highlightedCards.map((hc) => {
             return <HighlightedCard data={hc} />;
+          })}
+        </Flex>
+        <Flex vertical={false} justify="space-around" style={{ width: "100%" }}>
+          {listOfBooks.map((book) => {
+            return <BookCard data={book} />;
           })}
         </Flex>
       </div>

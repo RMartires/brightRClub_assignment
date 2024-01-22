@@ -5,7 +5,6 @@
     border-radius: 6px !important;
 }
 
-
 .badge-normal{
     background-color: #dcdeff !important;
     color: #6a4cff !important;
@@ -13,11 +12,17 @@
     border-radius: 6px !important;
 }
 
+/* highlighed card */
+
 .highlighted-card-image{
+    min-width: 250px;
+    max-width: 300px;
     transform: rotate(-5deg);
 }
 
 .highlighted-card-box {
+    min-width: 500px;
+    max-width: 625px;
     position: relative;
     overflow: hidden; /* Ensure overflow is hidden */
     width: 40%;
@@ -52,3 +57,44 @@
     display: unset !important;
     transition: 0.3s ease;
 }
+
+/* bookCard */
+
+.book-card .book-card-image{
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 15px;
+}
+
+.book-card {
+    position: relative;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 180px;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+.book-card::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 60%; /* Set the initial height for the background color box */
+    z-index: -1; /* Send the pseudo-element to the back */
+    transition: height 0.5s ease; /* Add transition for smooth height change */
+    background-color: #eef1ff;
+    border-radius: 30px;
+    top: 0;
+}
+
+.book-card:hover::before {
+    height: 100%; /* Set the desired height for the background color box on hover */
+    width: 100%;
+}
+
+.book-card:hover .highlighted-card-add-to-wishlist-btn{
+    display: unset !important;
+    transform: 0.5s ease;
+}
+
+
+

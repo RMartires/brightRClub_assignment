@@ -3,7 +3,7 @@ import { StarOutlined, LineOutlined, HeartOutlined } from "@ant-design/icons";
 import { AMAZON_LOGO_URL, PEOPLE_LOGO_URL } from "../constants";
 import Paragraph from "antd/es/typography/Paragraph";
 
-interface HighlightedCardData {
+export interface HighlightedCardData {
   imageSrc: string;
   ageRange: string;
   tags: string[];
@@ -18,7 +18,7 @@ export function BookStatsBar(props: {
 }) {
   const { data } = props;
   return (
-    <Flex gap="small" align="center">
+    <Flex gap="small" align="center" style={{ paddingBottom: "10px" }}>
       <Avatar size={"small"} src={AMAZON_LOGO_URL}></Avatar>
       <Flex justify="center" align="center">
         <StarOutlined
@@ -44,14 +44,16 @@ export function BookStatsBar(props: {
   );
 }
 
-export function AddToWishListButton() {
+export function AddToWishListButton(props: { width?: string }) {
+  const _width = props.width ?? "80%";
+
   return (
     <Button
       icon={<HeartOutlined />}
       type="primary"
       ghost
       style={{
-        width: "80%",
+        width: _width,
         alignSelf: "flex-start",
       }}
       className="highlighted-card-add-to-wishlist-btn"
