@@ -110,7 +110,7 @@ function ImageBox(props: { imageSrc: string }) {
   return (
     <Image
       preview={false}
-      height="100%"
+      height="90%"
       width="60%"
       src={props.imageSrc}
       style={{

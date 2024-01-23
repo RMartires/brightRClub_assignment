@@ -1,57 +1,44 @@
-import { Flex } from "antd";
+import { Flex, Image } from "antd";
 import Header from "./components/header";
-import HighlightedCard from "./components/highlightedCard";
-import BookCard from "./components/bookCard";
 import NumberedBookCard from "./components/numberedBookCard";
+import CardList from "./components/cardList";
+import HighlightedCard from "./components/highlightedCard";
+import { HIGHLIGHTED_CARD_DATA } from "./dummyData";
+import age_group_image from "../../public/age_group_image.png";
 
 export default function Home() {
-  const highlightedCards = [
-    {
-      imageSrc:
-        "https://m.media-amazon.com/images/I/81P9B8sY4AL._AC_UF1000,1000_QL80_.jpg",
-      ageRange: "3-6 years",
-      tags: ["New Arriaval"],
-      title: "How to Catch a Turkey - Adam Wallace",
-      rating: 4.3,
-      peopleCount: 123,
-      description:
-        "A New York Times Bestseller! From the bestselling How to Catch series comes a festive turkey tale ",
-    },
-  ];
-
-  const listOfBooks = [
-    {
-      imageSrc:
-        "https://m.media-amazon.com/images/I/81P9B8sY4AL._AC_UF1000,1000_QL80_.jpg",
-      title: "How to Catch a Turkey - Adam Wallace",
-      rating: 4.3,
-      peopleCount: 123,
-    },
-  ];
-
   return (
     <Flex gap="middle" wrap="wrap">
       <Header></Header>
       <div style={{ height: "100vh", width: "100%" }}>
-        <Flex
-          vertical={false}
-          justify="space-around"
-          style={{ width: "100%", height: "25%" }}
+        <section id="highlighted-card-list">
+          <CardList
+            components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
+              return <HighlightedCard data={data} />;
+            })}
+            leftFloatButton={true}
+            justify="space-around"
+            gap={50}
+          />
+        </section>
+
+        <section
+          id="group-by-age"
+          style={{
+            marginTop: "20px",
+          }}
         >
-          {highlightedCards.map((hc) => {
-            return <HighlightedCard data={hc} />;
-          })}
-        </Flex>
-        <Flex vertical={false} justify="space-around" style={{ width: "100%" }}>
-          {listOfBooks.map((book) => {
-            return <BookCard data={book} />;
-          })}
-        </Flex>
-        <Flex vertical={false} justify="space-around" style={{ width: "100%" }}>
-          {listOfBooks.map((book) => {
-            return <NumberedBookCard data={book} />;
-          })}
-        </Flex>
+          <Image src={age_group_image.src} preview={false} width="100%" />
+        </section>
+
+        <section id="numbered-card-list" style={{ marginTop: "20px" }}>
+          <CardList
+            components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
+              return <NumberedBookCard data={data} id={`${index + 1}`} />;
+            })}
+            title="Top 10 Books"
+          />
+        </section>
       </div>
     </Flex>
   );

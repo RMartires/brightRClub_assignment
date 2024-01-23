@@ -15,7 +15,7 @@
 /* highlighed card */
 
 .highlighted-card-image{
-    min-width: 250px;
+    min-width: 280px;
     max-width: 300px;
     transform: rotate(-5deg);
 }
@@ -64,6 +64,7 @@
     min-width: 150px;
     max-width: 200px;
     border-radius: 15px;
+    max-height: 180px;
 }
 
 .book-card {
@@ -98,9 +99,16 @@
 
 /* numbered book card */
 
+.numbered-book-card .book-card-image{
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 15px;
+    max-height: 180px;
+}
+
 .numbered-book-card::before {
     color: #6a4cff;
-    content: "3";
+    content: attr(id);
     position: relative;
     bottom: -90px;
     right: -25px;
@@ -118,4 +126,22 @@
 .numbered-book-card:hover .book-card{
     transform: scale(1.1) translateX(-20px);
     transition: transform 0.5s;
+}
+
+/* card list */
+.card-list .ant-float-btn-body{
+    width: 60px !important;
+}
+
+.card-list{
+    overflow-y: scroll;
+}
+
+.card-list::-webkit-scrollbar {
+    display: none;
+}
+
+.card-list {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
 }

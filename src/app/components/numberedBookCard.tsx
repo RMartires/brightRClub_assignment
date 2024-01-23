@@ -7,13 +7,16 @@ const comicNeue = Comic_Neue({
   subsets: ["latin"],
 });
 
-export default function NumberedBookCard(props: { data: BookCardProps }) {
-  const { data } = props;
+export default function NumberedBookCard(props: {
+  data: BookCardProps;
+  id: string;
+}) {
+  const { data, id } = props;
 
   const className = "numbered-book-card " + comicNeue.className;
 
   return (
-    <Flex className={className}>
+    <Flex className={className} id={id}>
       <BookCard data={data} />
     </Flex>
   );
