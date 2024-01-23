@@ -80,18 +80,26 @@ body{
 .book-card::before {
     content: "";
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 60%; 
     z-index: -1; 
     transition: height 0.5s ease; 
     background-color: #eef1ff;
     border-radius: 30px;
-    top: 0;
+    top: 0px;
 }
 
 .book-card:hover::before {
     height: 100%;
-    width: 100%;
+    width: 90%;
+}
+
+.book-card-div{
+    padding-top:35px;
+}
+
+.book-card:hover .book-card-div{
+    padding-top: 0px;
 }
 
 .book-card:hover .highlighted-card-add-to-wishlist-btn{

@@ -29,6 +29,7 @@ export default function BookCard(props: { data: BookCardProps; id: string }) {
         {data.title}
       </p>
       <BookStatsBar data={data} />
+      <div className="book-card-div"></div>
       <AddToWishListButton width="100%" />
     </Flex>
   );
