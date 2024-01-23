@@ -11,13 +11,22 @@ export default function CardList(props: {
   justify?: string;
   gap?: number;
   leftMargin?: string;
+  titleColor?: string;
 }) {
-  const { components, title, leftFloatButton, justify, gap, leftMargin } =
-    props;
+  const {
+    components,
+    title,
+    leftFloatButton,
+    justify,
+    gap,
+    leftMargin,
+    titleColor,
+  } = props;
   const showLeftScrollBtn = leftFloatButton ?? false;
   const justifyOption = justify ?? "";
   const gapWidth = gap ?? 10;
   const marginLeft = leftMargin ?? "";
+  const _titleColor = titleColor ?? "";
 
   const [list, setList] = useState(components);
   const [y, setY] = useState(0);
@@ -35,6 +44,7 @@ export default function CardList(props: {
         level={2}
         style={{
           marginLeft: "20px",
+          color: _titleColor,
         }}
       >
         {title ?? ""}

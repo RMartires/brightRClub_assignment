@@ -168,13 +168,19 @@ export default function PopularSeriesSection(props: {
         leftFloatButton={true}
         gap={40}
         justify="space-around"
+        titleColor="white"
       />
       {listData != null ? (
         <div>
           <div className="popular-series-line"></div>
           <CardList
             components={listData.map((data, index) => {
-              return <BookCard data={data} key={index} />;
+              return (
+                <BookCard
+                  data={data}
+                  id={"popular-series--" + index.toString()}
+                />
+              );
             })}
           />
         </div>

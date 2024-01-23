@@ -7,13 +7,14 @@ import PopularSeriesSection from "./components/popularSeriesSection";
 import { HIGHLIGHTED_CARD_DATA, POPULAR_SERIES_DATA } from "./dummyData";
 import age_group_image from "../../public/age_group_image.png";
 import BookCard from "./components/bookCard";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
     <Flex gap="middle" wrap="wrap">
       <Header></Header>
       <div style={{ height: "auto", width: "100%" }}>
-        <Flex vertical gap={40}>
+        <Flex vertical gap={75}>
           <section id="highlighted-card-list">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
@@ -79,6 +80,7 @@ export default function Home() {
           </section>
         </Flex>
       </div>
+      <Footer />
     </Flex>
   );
 }
