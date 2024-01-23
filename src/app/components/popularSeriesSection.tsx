@@ -156,6 +156,7 @@ export default function PopularSeriesSection(props: {
           return (
             <PopularSeriesCard
               id={(index + 1).toString()}
+              key={(index + 1).toString()}
               data={data}
               onClick={() => {
                 onClickHandler(index);
@@ -179,6 +180,7 @@ export default function PopularSeriesSection(props: {
                 <BookCard
                   data={data}
                   id={"popular-series--" + index.toString()}
+                  key={"popular-series--" + index.toString()}
                 />
               );
             })}

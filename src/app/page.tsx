@@ -18,7 +18,7 @@ export default function Home() {
           <section id="highlighted-card-list">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
-                return <HighlightedCard data={data} />;
+                return <HighlightedCard data={data} key={index} />;
               })}
               leftFloatButton={true}
               justify="space-around"
@@ -38,7 +38,13 @@ export default function Home() {
           <section id="numbered-card-list" style={{ marginTop: "20px" }}>
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
-                return <NumberedBookCard data={data} id={`${index + 1}`} />;
+                return (
+                  <NumberedBookCard
+                    data={data}
+                    id={`${index + 1}`}
+                    key={`${index + 1}`}
+                  />
+                );
               })}
               title="Top 10 Books"
               leftMargin="30px"
@@ -52,7 +58,13 @@ export default function Home() {
           <section id="best-sellers">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
-                return <BookCard data={data} id={`${index + 1}`} />;
+                return (
+                  <BookCard
+                    data={data}
+                    id={`${index + 1}`}
+                    key={`${index + 1}`}
+                  />
+                );
               })}
               title="Best Sellers"
               leftMargin="30px"
@@ -62,7 +74,9 @@ export default function Home() {
           <section id="new-arrivals">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
-                return <BookCard data={data} id={`${index + 1}`} />;
+                return (
+                  <BookCard data={data} id={`${index + 1}`} key={index + 1} />
+                );
               })}
               title="New Arrivals"
               leftMargin="30px"
@@ -72,7 +86,9 @@ export default function Home() {
           <section id="peppa-pig">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {
-                return <BookCard data={data} id={`${index + 1}`} />;
+                return (
+                  <BookCard data={data} id={`${index + 1}`} key={index + 1} />
+                );
               })}
               title="Peppa Pig"
               leftMargin="30px"

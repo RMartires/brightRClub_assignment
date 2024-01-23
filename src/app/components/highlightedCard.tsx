@@ -80,8 +80,15 @@ function RightTextBox(props: {
       }}
     >
       <Flex gap="small">
-        {data.tags.map((tag) => {
-          return <Badge className="badge-highlighted">{tag}</Badge>;
+        {data.tags.map((tag, index) => {
+          return (
+            <Badge
+              className="badge-highlighted"
+              key={"badge-highlighted" + index}
+            >
+              {tag}
+            </Badge>
+          );
         })}
         <Badge className="badge-normal">{data.ageRange}</Badge>
       </Flex>
