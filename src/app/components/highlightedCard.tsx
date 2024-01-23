@@ -3,7 +3,7 @@ import { StarOutlined, LineOutlined, HeartOutlined } from "@ant-design/icons";
 import { AMAZON_LOGO_URL, PEOPLE_LOGO_URL } from "../constants";
 import Paragraph from "antd/es/typography/Paragraph";
 
-export interface HighlightedCardData {
+export interface IHighlightedCardData {
   imageSrc: string;
   ageRange: string;
   tags: string[];
@@ -14,7 +14,7 @@ export interface HighlightedCardData {
 }
 
 export function BookStatsBar(props: {
-  data: Pick<HighlightedCardData, "rating" | "peopleCount">;
+  data: Pick<IHighlightedCardData, "rating" | "peopleCount">;
 }) {
   const { data } = props;
   return (
@@ -65,7 +65,7 @@ export function AddToWishListButton(props: { width?: string }) {
 
 function RightTextBox(props: {
   data: Pick<
-    HighlightedCardData,
+    IHighlightedCardData,
     "ageRange" | "description" | "peopleCount" | "rating" | "tags" | "title"
   >;
 }) {
@@ -122,7 +122,7 @@ function ImageBox(props: { imageSrc: string }) {
   );
 }
 
-export default function HighlightedCard(props: { data: HighlightedCardData }) {
+export default function HighlightedCard(props: { data: IHighlightedCardData }) {
   const highlightedData = props.data;
 
   return (

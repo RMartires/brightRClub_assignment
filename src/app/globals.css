@@ -1,3 +1,7 @@
+body{
+    margin: 0px !important;
+}
+
 .badge-highlighted{
     background-color: #dcdeff !important;
     color: #6a4cff !important;
@@ -69,9 +73,8 @@
 
 .book-card {
     position: relative;
-    overflow: hidden; /* Ensure overflow is hidden */
     width: 180px;
-    padding: 10px;
+    padding: 25px;
     padding-bottom: 15px;
 }
 
@@ -144,4 +147,55 @@
 .card-list {
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* popular series card */
+.popular-series-card .popular-series-card-image{
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 30px;
+    max-height: 180px;
+}
+
+.popular-series-card{
+    width: 180px;
+}
+
+.popular-card-selected{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    overflow: visible;
+}
+
+.card-list-scroll-selected{
+    overflow: visible;
+}
+
+.popular-series-card-disabled{
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+}
+
+.popular-series-disabled-btn{
+    display: none !important;
+}
+
+.popular-series-btn{
+    display: unset;
+}
+
+.popular-series-line{
+    width: 96%;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    margin: 30px;
+}
+
+#popular-series-list{
+    background: rgb(4,23,88);
+    background: radial-gradient(circle, rgba(4,23,88,1) 0%, rgba(31,83,136,1) 37%, rgba(0,125,112,1) 100%);
+    color: #eef1ff;
+    padding: 20px;
 }

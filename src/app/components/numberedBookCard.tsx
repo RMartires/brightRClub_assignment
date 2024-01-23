@@ -17,7 +17,7 @@ export default function NumberedBookCard(props: {
 
   return (
     <Flex className={className} id={id}>
-      <BookCard data={data} />
+      <BookCard data={data} id={id} />
     </Flex>
   );
 }

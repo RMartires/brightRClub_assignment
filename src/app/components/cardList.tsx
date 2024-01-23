@@ -10,11 +10,14 @@ export default function CardList(props: {
   leftFloatButton?: boolean;
   justify?: string;
   gap?: number;
+  leftMargin?: string;
 }) {
-  const { components, title, leftFloatButton, justify, gap } = props;
+  const { components, title, leftFloatButton, justify, gap, leftMargin } =
+    props;
   const showLeftScrollBtn = leftFloatButton ?? false;
   const justifyOption = justify ?? "";
   const gapWidth = gap ?? 10;
+  const marginLeft = leftMargin ?? "";
 
   const [list, setList] = useState(components);
   const [y, setY] = useState(0);
@@ -24,6 +27,7 @@ export default function CardList(props: {
       vertical
       style={{
         width: "100%",
+        marginLeft: marginLeft,
       }}
       className={"card-list" + title}
     >

@@ -2,18 +2,18 @@ import { Flex, Image } from "antd";
 import {
   AddToWishListButton,
   BookStatsBar,
-  HighlightedCardData,
+  IHighlightedCardData,
 } from "./highlightedCard";
 
 export type BookCardProps = Pick<
-  HighlightedCardData,
+  IHighlightedCardData,
   "imageSrc" | "title" | "rating" | "peopleCount"
 >;
 
-export default function BookCard(props: { data: BookCardProps }) {
-  const { data } = props;
+export default function BookCard(props: { data: BookCardProps; id: string }) {
+  const { data, id } = props;
   return (
-    <Flex vertical className="book-card" align="center">
+    <Flex vertical className="book-card" align="center" key={"book-card-" + id}>
       <Image
         preview={false}
         src={data.imageSrc}
