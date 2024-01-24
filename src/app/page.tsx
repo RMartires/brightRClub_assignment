@@ -14,7 +14,7 @@ export default function Home() {
     <Flex gap="middle" wrap="wrap">
       <Header></Header>
       <div style={{ height: "auto", width: "100%" }}>
-        <Flex vertical gap={75}>
+        <Flex vertical gap={20}>
           <section id="highlighted-card-list">
             <CardList
               components={HIGHLIGHTED_CARD_DATA.map((data, index) => {

@@ -22,6 +22,7 @@ body{
     min-width: 280px;
     max-width: 300px;
     transform: rotate(-5deg);
+    height: 300px;
 }
 
 .highlighted-card-box {
@@ -30,6 +31,7 @@ body{
     position: relative;
     overflow: hidden; 
     width: 40%;
+    max-height: 300px;
 }
 
 .highlighted-card-box::before {
@@ -81,12 +83,12 @@ body{
     content: "";
     position: absolute;
     width: 80%;
-    height: 60%; 
+    height: 40%; 
     z-index: -1; 
     transition: height 0.5s ease; 
-    background-color: #eef1ff;
+    background-color: #eef1ff7a;
     border-radius: 30px;
-    top: 0px;
+    top: 22px;
 }
 
 .book-card:hover::before {
@@ -152,8 +154,8 @@ body{
 }
 
 .card-list {
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 /* popular series card */
@@ -205,4 +207,5 @@ body{
     background: radial-gradient(circle, rgba(4,23,88,1) 0%, rgba(31,83,136,1) 37%, rgba(0,125,112,1) 100%);
     color: #eef1ff;
     padding: 20px;
+    z-index: 2;
 }
